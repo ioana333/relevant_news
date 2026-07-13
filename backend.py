@@ -25,7 +25,7 @@ def get_news():
             from_param=yesterday,
             to=today,
             language='en',
-            sort_by='relevancy',
+            sort_by='popularity',
             page_size=50,
             page=1
         )
