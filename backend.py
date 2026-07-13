@@ -46,5 +46,5 @@ def get_news():
 
         return formatted_articles
     except Exception as e:
-        print(f"ERROR API: {e}")
+        st.error(f"ERROR API: {e}")
         return []

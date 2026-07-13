@@ -1,5 +1,5 @@
 import streamlit as st
-from main import get_news
+from backend import get_news
 
 st.set_page_config(page_title="News", page_icon="📰", layout="centered")
 
