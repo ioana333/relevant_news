@@ -8,8 +8,7 @@ import streamlit as st
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
-INTERESTS = '(AI OR "artificial intelligence" OR "machine learning" OR "generative AI" OR LLM) AND (cybersecurity OR "cyber security" OR cyberattack OR "data breach" OR ransomware OR malware OR hacking OR phishing OR vulnerability OR "video games" OR gaming OR "game development" OR hardware OR "graphics card" OR GPU OR CPU OR "PC components" OR "tech industry" OR IT)'
-
+INTERESTS = '(AI OR "artificial intelligence" OR "machine learning" OR "generative AI" OR LLM OR cybersecurity OR "cyber security" OR cyberattack OR "data breach" OR ransomware OR malware OR hacking OR phishing OR vulnerability OR "video games" OR gaming OR "game development" OR hardware OR "graphics card" OR GPU OR CPU OR "PC components" OR "tech industry" OR IT OR "new movies" OR "movie releases" OR "upcoming films" OR actors OR "actor interviews" OR "celebrity interviews" OR "good music" OR "music releases" OR "new album")'
 # initializare client
 newsapi = NewsApiClient(api_key=api_key)
 
