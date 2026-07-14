@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from datetime import date, timedelta
 from newsapi.newsapi_client import NewsApiClient
 import streamlit as st
-from numpy.random import shuffle
+import random
 
 from interests import CATEGORIES
 
@@ -62,13 +62,18 @@ def get_news():
     return all_news
 
 
-
 def shuffle_custom(category_news):
     result = []
-    max_len = max((len(cat) for cat in category_news), default=0)
-
-    for i in range(max_len):
-        round_batch = [cat[i] for cat in category_news if i < len(cat)]
-        shuffle(round_batch)
-        result.extend(round_batch)
+    index = 0
+    while True:
+        current_pack = [
+            categorie[index]
+            for categorie in category_news
+            if index < len(categorie)
+        ]
+        if not current_pack:
+            break
+        random.shuffle(current_pack)
+        result.extend(current_pack)
+        index += 1
     return result
