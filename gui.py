@@ -47,7 +47,7 @@ else:
 
             st.markdown(
                 f"<p style='color: #f9fcfb; font-size: 0.85rem; font-weight: 600;'>"
-                f"🌐 {article['source']} • 📅 {article['date']} • 🏷️ {article['category']}</p>",
+                f"🌐 {article['source']} • 📅 {article['date']} • 🏷️ {article.get('category', 'general')}</p>",
                 unsafe_allow_html=True)
 
             if article["description"]:

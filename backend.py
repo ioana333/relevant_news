@@ -56,7 +56,7 @@ def get_news():
                 "link": article['url'],
                 "category": label
             })
-            
+
         category_news.append(formatted_articles)
     all_news = shuffle_custom(category_news)
     return all_news
