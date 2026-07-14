@@ -28,7 +28,7 @@ if not data:
 else:
     st.markdown(
         f"<p style='text-align:center; color:#9aa0a6; margin-bottom:1.2rem;'>"
-        f"✔ {len(data)} relevant articles found across your interests - prooooooooooooba</p>",
+        f"✔ {len(data)} relevant articles found across your interests</p>",
         unsafe_allow_html=True,
     )
 

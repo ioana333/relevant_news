@@ -22,6 +22,7 @@ def get_news():
 
     category_news = []
     seen_urls = []
+    debug_counts = {}
 
     for label, query in CATEGORIES.items():
 
@@ -36,7 +37,8 @@ def get_news():
                 page=1
             )
         except Exception as e:
-            st.error(f"ERROR API: {e}")
+            st.error(f"ERROR API la categoria '{label}': {e}")
+            debug_counts[label] = "EROARE"
             continue
 
         formatted_articles = []
@@ -58,6 +60,9 @@ def get_news():
             })
 
         category_news.append(formatted_articles)
+        debug_counts[label] = f"{len(response.get('articles', []))} brut -> {len(formatted_articles)} pastrate"
+
+    st.session_state["debug_counts"] = debug_counts
     all_news = shuffle_custom(category_news)
     return all_news
 
